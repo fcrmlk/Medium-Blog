@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,6 +17,15 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Articles", articles_path %></li>
         <li><%= link_to "Create Article", new_article_path %></li>
+
+        <li><%= link_to "Users", users_path %></li>
+
+        <li><%= link_to "Create user", signup_path %></li>
+        <% unless current_user  %>
+          <li><%= link_to "login user", login_path %></li>
+        <% else %>
+          <li><%= link_to "logout user", logout_path, :method => :delete  %>
+        <% end %>
           
         </li>
       </ul>

@@ -1,3 +1,5 @@
 class Article < ActiveRecord::Base
-	validates :title, :description, presence: true
+	belongs_to :user
+	validates :title,:user_id, :description, presence: true
+	
 end
