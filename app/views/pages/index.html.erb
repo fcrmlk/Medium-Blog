@@ -1,2 +1,39 @@
-<h1>Welcome to Blog</h1>
-<%= link_to 'About', about_path %>
+<div align="center">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+  <ul class="listing">
+   <div class="row">
+    <div class="well col-md-4 col-md-offset-4">
+     <div align="center">
+     	<% unless current_user  %>
+          <h1><%=" Please Login "%></h1>
+        <% else %>
+          <h1><%=" Please Logout "%></h1>
+        <% end %>
+          
+        </li>
+        <br><br>
+<% if !current_user  %>
+          <li><%= link_to "Login User", login_path, class: "btn btn btn-primary" %></li>
+        <% else %>
+          <li><%= link_to "Logout User", logout_path, class: "btn btn btn-primary", :method => :delete  %>
+        <% end %>
+          
+        </li>
+</div>
+     
+    </div>
+   </div>
+  </ul>
+</div>

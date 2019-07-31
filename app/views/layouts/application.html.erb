@@ -3,13 +3,23 @@
   <head>
     <title>Blog</title>
     <%= csrf_meta_tags %>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  	
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= custom_bootstrap_flash %>
+    <script src="sweetalert2.all.min.js"></script>
+
   </head>
+
 <body>
     <%= render 'shared/nav' %>
+    <%= render 'shared/flash' %>
     <%= yield %>
-  </body>
+</body>
 </html>
